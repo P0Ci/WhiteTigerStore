@@ -169,7 +169,8 @@ body {
   left: 12rem;
   background: transparent;
   padding: 0;
-  text-align: left;
+  display: inline-block;
+  text-decoration: none;
   color: var(--primary-white);
   max-width: 500px;
   z-index: 2;
@@ -202,6 +203,7 @@ body {
   border-radius: 0;
   position: relative;
   display: inline-block;
+  text-decoration: none;
   z-index: 1;
 }
 

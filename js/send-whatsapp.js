@@ -117,13 +117,11 @@ app.post("/api/send-whatsapp", async (req, res) => {
     console.log("WhatsApp API response body:", respText);
 
     if (!resp.ok) {
-      return res
-        .status(502)
-        .json({
-          error: "WhatsApp API error",
-          status: resp.status,
-          details: respText,
-        });
+      return res.status(502).json({
+        error: "WhatsApp API error",
+        status: resp.status,
+        details: respText,
+      });
     }
 
     let data;
