@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Produk - White Tiger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detail-style.css" />
+    <script src="icon/node_modules/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <a href="index.html">
+            <img src="image/logo.png" alt="Logo" class="logo-img" />
+          </a>
+        </div>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">BERANDA</a>
+          <a href="shop.html" class="nav-link">BELANJA</a>
+          <a href="about.html" class="nav-link">TENTANG</a>
+        </div>
+
+        <div class="nav-icons">
+          <a href="wishlist.html" class="icon-link">
+            <i data-feather="heart"></i>
+          </a>
+          <a href="cart.html" class="icon-link cart-icon">
+            <i data-feather="shopping-cart"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="product-detail">
+      <div class="detail-container">
+        <div class="detail-images">
+          <div class="main-image">
+            <img id="mainImage" src="" alt="Product" />
+            <button class="image-toggle" onclick="toggleImage()">
+              <i data-feather="chevron-right"></i>
+            </button>
+          </div>
+          <div class="thumbnail-images">
+            <img
+              id="thumb1"
+              src=""
+              alt="Front"
+              class="thumbnail active"
+              onclick="switchImage(0)"
+            />
+            <img
+              id="thumb2"
+              src=""
+              alt="Back"
+              class="thumbnail"
+              onclick="switchImage(1)"
+            />
+          </div>
+        </div>
+
+        <div class="detail-info">
+          <div class="breadcrumb">
+            <a href="index.html">Beranda</a>
+            <span>/</span>
+            <a href="shop.html">Belanja</a>
+            <span>/</span>
+            <span id="breadcrumbTitle">Produk</span>
+          </div>
+
+          <h1 id="productTitle" class="product-detail-title"></h1>
+          <p id="productPrice" class="product-detail-price"></p>
+
+          <div class="size-section">
+            <label>Ukuran:</label>
+            <div class="size-options" id="sizeOptions">
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="XXL">XXL</button>
+            </div>
+          </div>
+
+          <div class="quantity-section">
+            <label>Jumlah:</label>
+            <div class="quantity-input">
+              <button onclick="decreaseQuantity()">−</button>
+              <input type="number" id="quantity" value="1" min="1" readonly />
+              <button onclick="increaseQuantity()">+</button>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="btn-add-cart" onclick="addToCartFromDetail()">
+              TAMBAH KE KERANJANG
+            </button>
+          </div>
+
+          <div class="secondary-actions">
+            <button class="btn-wishlist" onclick="toggleWishlistFromDetail()">
+              <i data-feather="heart"></i> TAMBAH KE WISHLIST
+            </button>
+            <button class="btn-size-guide">
+              <i data-feather="help-circle"></i> PANDUAN UKURAN
+            </button>
+          </div>
+
+          <div class="description-section">
+            <h3>Deskripsi</h3>
+            <p id="productDescription"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section footer-contact">
+          <h3 class="footer-title">HUBUNGI KAMI</h3>
+          <div class="contact-icons">
+            <a href="#" class="contact-icon" title="Instagram">
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="#" class="contact-icon" title="TikTok">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section footer-payment">
+          <h3 class="footer-title">METODE PEMBAYARAN</h3>
+          <div class="payment-methods">
+            <span class="payment-method">Transfer Bank</span>
+            <span class="payment-method">E-Wallet</span>
+            <span class="payment-method">COD</span>
+          </div>
+        </div>
+
+        <div class="footer-section footer-creator">
+          <h3 class="footer-title">PEMBUAT</h3>
+          <div class="contact-icons">
+            <a
+              href="https://www.instagram.com/andrryy.__"
+              target="_blank"
+              class="contact-icon"
+              title="Instagram"
+            >
+              <i data-feather="instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/febri-andry-356419291"
+              target="_blank"
+              class="contact-icon"
+              title="LinkedIn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/P0Ci"
+              target="_blank"
+              class="contact-icon"
+              title="GitHub"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-credit">Build by Febriandry</p>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/detail-script.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

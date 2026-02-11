@@ -1,0 +1,66 @@
+/* GAYA HALAMAN TOKO */
+.shop-section {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: var(--primary-white);
+}
+
+.shop-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary-black);
+  margin-bottom: 3rem;
+  padding: 0 7rem;
+  text-align: left;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 7rem;
+  margin-bottom: 2rem;
+}
+
+.products-grid .product-card {
+  flex: none;
+  width: 100%;
+}
+
+.products-grid .products-wrapper {
+  display: contents;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-title {
+    padding: 0 2rem;
+    font-size: 1.8rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-title {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}

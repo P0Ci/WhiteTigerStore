@@ -1,0 +1,126 @@
+/* GAYA HALAMAN WISHLIST */
+.wishlist-section {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: var(--primary-white);
+  min-height: 60vh;
+}
+
+.wishlist-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary-black);
+  margin-bottom: 3rem;
+  padding: 0 7rem;
+  text-align: left;
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 7rem;
+  margin-bottom: 2rem;
+}
+
+.wishlist-grid .product-card {
+  width: 100%;
+}
+
+.wish-card-action {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-add-cart-wish {
+  flex: 1;
+  padding: 0.7rem;
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-add-cart-wish:hover {
+  opacity: 0.8;
+}
+
+.btn-remove-wish {
+  padding: 0.7rem 1rem;
+  background-color: transparent;
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-remove-wish:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.empty-wishlist {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-wishlist p {
+  font-size: 1.3rem;
+  color: var(--dark-gray);
+  margin-bottom: 2rem;
+}
+
+.btn-continue {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-continue:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .wishlist-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wishlist-title {
+    padding: 0 2rem;
+    font-size: 1.8rem;
+  }
+
+  .wishlist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-title {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .wishlist-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
