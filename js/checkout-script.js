@@ -46,6 +46,9 @@ function validateWhatsApp(phone) {
   return phoneRegex.test(phone.replace(/\D/g, ""));
 }
 
+// API endpoint for sending WhatsApp from admin number (adjust if your server is hosted elsewhere)
+const WHATSAPP_API_URL = "http://localhost:3000/api/send-whatsapp";
+
 function formatWhatsAppNumber(phone) {
   let cleaned = phone.replace(/\D/g, "");
   if (cleaned.startsWith("0")) {
@@ -127,11 +130,10 @@ function sendAdminNotification(formData) {
   adminMessage += `\n*TOTAL: Rp${total.toLocaleString("id-ID")}*\n`;
   adminMessage += `Metode: ${formData.paymentMethod}`;
 
-  const adminPhone = "628126611752";
+  const adminPhone = "6281266117520";
   const adminURL = `https://wa.me/${adminPhone}?text=${encodeURIComponent(adminMessage)}`;
 
-  fetch(adminURL, { mode: "no-cors" }).catch(() => {
-  });
+  fetch(adminURL, { mode: "no-cors" }).catch(() => {});
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -194,13 +196,17 @@ document.addEventListener("DOMContentLoaded", () => {
       orders.push(order);
       localStorage.setItem("orders", JSON.stringify(orders));
 
+      // The buyer will send the order message to the admin number via WhatsApp
+      const adminPhone = "6281266117520";
+      const adminURL = `https://wa.me/${adminPhone}?text=${message}`;
+
+      // persist order and clear cart locally
+      localStorage.setItem("orders", JSON.stringify(orders));
       localStorage.setItem("cart", JSON.stringify([]));
       updateCartBadge();
 
-      sendAdminNotification(formData);
-
-      window.location.href = whatsappURL;
+      // Redirect buyer to WhatsApp chat with admin (message prefilled)
+      window.location.href = adminURL;
     }
   });
 });
-

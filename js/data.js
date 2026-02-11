@@ -1,7 +1,7 @@
 const productsData = [
   {
     id: 1,
-    name: "Kaos Warna Biru",
+    name: "Kaos Hitam White Tiger V1",
     price: 180000,
     category: "Casual",
     image: "image/baju/kaos1 depan.png",
@@ -10,7 +10,7 @@ const productsData = [
   },
   {
     id: 2,
-    name: "Kaos Klasik Putih",
+    name: "Kaos Putih White Tiger V1",
     price: 180000,
     category: "Casual",
     image: "image/baju/kaos2 depan.png",
@@ -19,7 +19,7 @@ const productsData = [
   },
   {
     id: 3,
-    name: "Kaos Premium Hitam",
+    name: "Kaos Putih WT V2",
     price: 180000,
     category: "Casual",
     image: "image/baju/kaos3 depan.png",
@@ -28,7 +28,7 @@ const productsData = [
   },
   {
     id: 4,
-    name: "Kaos Sporty",
+    name: "Kaos Hitam WT V2",
     price: 180000,
     category: "Casual",
     image: "image/baju/kaos4 depan.png",
@@ -37,7 +37,7 @@ const productsData = [
   },
   {
     id: 5,
-    name: "Varsity Premium",
+    name: "Varsity Premium White Tiger",
     price: 450000,
     category: "Formal",
     image: "image/baju/varsity1 depan.png",
@@ -120,4 +120,3 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
     lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
   });
 })();
-
